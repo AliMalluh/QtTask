@@ -1,6 +1,7 @@
 #ifndef USER_H
 #define USER_H
-#include <QMainWindow>
+#include <qt5/QtWidgets/QMainWindow>
+
 class User{
 private:
     QString name_;

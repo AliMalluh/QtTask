@@ -1,6 +1,5 @@
-#include "mainwindow.h"
-#include "ui_mainwindow.h"
-
+#include "Task/mainwindow.h"
+#include "Task/ui_mainwindow.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -34,11 +33,7 @@ void MainWindow::on_Done_clicked()
     }else gender = ui->FemaleBox->text();
     QString date = ui->dateEdit->date().toString();
     User* user = new User(name,email,pass,phone,gender,date);
-    userControl::Add(user);
-    hide();
-    log = new login(this);
-    log->show();
-
+    emit login(user);
 }
 
 void MainWindow::on_MaleBox_clicked()

@@ -1,10 +1,9 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include <QMainWindow>
-#include "login.h"
-#include "User.h"
-#include "usercontroller.h"
+#include <qt5/QtWidgets/QMainWindow>
+#include "Task/User.h"
+
 namespace Ui {
 class MainWindow;
 }
@@ -17,6 +16,9 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
+signals:
+    void login(User*);
+
 
 private slots:
     void on_Done_clicked();
@@ -27,7 +29,7 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-    login  *log;
+    //login  *log;
 };
 
 #endif // MAINWINDOW_H
